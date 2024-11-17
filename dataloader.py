@@ -97,6 +97,12 @@ class SequenceLoader(object):
         Iterators require this method defined.
         """
         return self
+    
+    def __len__(self):
+        """
+        Actually implement `__len__` so that tqdm works
+        """
+        return self.n_batches
 
     def __next__(self):
         """
