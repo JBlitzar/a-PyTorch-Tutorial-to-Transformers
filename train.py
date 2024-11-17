@@ -5,6 +5,7 @@ import time
 from model import Transformer, LabelSmoothedCE
 from dataloader import SequenceLoader
 from utils import *
+from tqdm import tqdm, trange
 
 # Data parameters
 data_folder = os.path.expanduser("~/torch_datasets/transformer_data")  # folder with data files
@@ -90,7 +91,7 @@ def main():
     epochs = (n_steps // (train_loader.n_batches // batches_per_step)) + 1
 
     # Epochs
-    for epoch in range(start_epoch, epochs):
+    for epoch in trange(start_epoch, epochs, dynamic_ncols=True):
         # Step
         step = epoch * train_loader.n_batches // batches_per_step
 
@@ -136,7 +137,7 @@ def train(train_loader, model, criterion, optimizer, epoch, step):
 
     # Batches
     for i, (source_sequences, target_sequences, source_sequence_lengths, target_sequence_lengths) in enumerate(
-            train_loader):
+            tqdm(train_loader, leave=False, dynamic_ncols=True)):
 
         # Move to default device
         source_sequences = source_sequences.to(device)  # (N, max_source_sequence_pad_length_this_batch)
@@ -218,7 +219,7 @@ def validate(val_loader, model, criterion):
         losses = AverageMeter()
         # Batches
         for i, (source_sequence, target_sequence, source_sequence_length, target_sequence_length) in enumerate(
-                tqdm(val_loader, total=val_loader.n_batches)):
+                tqdm(val_loader, total=val_loader.n_batches, leave=False, dynamic_ncols=True)):
             source_sequence = source_sequence.to(device)  # (1, source_sequence_length)
             target_sequence = target_sequence.to(device)  # (1, target_sequence_length)
             source_sequence_length = source_sequence_length.to(device)  # (1)
