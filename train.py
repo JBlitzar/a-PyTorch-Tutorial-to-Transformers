@@ -21,7 +21,7 @@ positional_encoding = get_positional_encoding(d_model=d_model,
                                               max_length=160)  # positional encodings up to the maximum possible pad-length
 
 # Learning parameters
-checkpoint = 'transformer_checkpoint.pth.tar'  # path to model checkpoint, None if none
+checkpoint = None#'transformer_checkpoint.pth.tar'  # path to model checkpoint, None if none
 tokens_in_batch = 2000  # batch size in target language tokens
 batches_per_step = 25000 // tokens_in_batch  # perform a training step, i.e. update parameters, once every so many batches
 print_frequency = 20  # print status once every so many steps
