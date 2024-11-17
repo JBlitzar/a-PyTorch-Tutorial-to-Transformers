@@ -6,6 +6,8 @@ from model import Transformer, LabelSmoothedCE
 from dataloader import SequenceLoader
 from utils import *
 from tqdm import tqdm, trange
+import os
+os.system(f"caffeinate -is -w {os.getpid()} &")
 
 # Data parameters
 data_folder = os.path.expanduser("~/torch_datasets/transformer_data")  # folder with data files
