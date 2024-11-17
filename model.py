@@ -4,7 +4,7 @@ import math
 import torch.nn.functional as F
 from torch.nn.utils.rnn import pack_padded_sequence
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = "mps" if torch.backends.mps.is_available() else "cpu"
 
 
 class MultiHeadAttention(nn.Module):
