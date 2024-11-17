@@ -1,3 +1,6 @@
 Epoch 1/19-----Batch 240/65700-----Step 20/100000-----Data Time 0.003 (0.004)-----Step Time 22.828 (13.350)-----Loss 11.0326 (11.1059)
 Epoch 1/19-----Batch 480/65700-----Step 40/100000-----Data Time 0.003 (0.004)-----Step Time 22.066 (18.840)-----Loss 10.6689 (10.9509)
 Epoch 1/19-----Batch 720/65700-----Step 60/100000-----Data Time 0.005 (0.004)-----Step Time 36.043 (23.318)-----Loss 10.1965 (10.7639)
+Epoch 1/19-----Batch 960/65700-----Step 80/100000-----Data Time 0.005 (0.004)-----Step Time 37.315 (28.540)-----Loss 9.7989 (10.6022)
+Epoch 1/19-----Batch 1200/65700-----Step 100/100000-----Data Time 0.003 (0.004)-----Step Time 32.164 (29.889)-----Loss 10.0602 (10.4668)
+RuntimeError: MPS backend out of memory (MPS allocated: 14.45 GB, other allocations: 66.92 GB, max allowed: 81.60 GB). Tried to allocate 280.59 MB on private pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure).
