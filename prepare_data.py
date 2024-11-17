@@ -1,3 +1,5 @@
+print("Do not run, is slow and runs MPS out of memory.")
+exit()
 from utils import *
 
 download_data(data_folder=os.path.expanduser("~/torch_datasets/transformer_data"))

@@ -1,3 +1,6 @@
+print("Do not run, is slow and runs MPS out of memory.")
+exit()
+
 import torch.backends.cudnn as cudnn
 import torch.optim
 import torch.utils.data
